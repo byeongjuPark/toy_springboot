@@ -8,4 +8,30 @@
         SELECT *
         FROM USERS_LIST;
     </select>
+
+    <!-- call List.selectFromUSERS_LISTByUid -->
+    <select id="selectFromUSERS_LISTByUid" 
+        parameterType="Map" resultType="Map">
+        SELECT *
+        FROM USERS_LIST
+        WHERE USERS_UID = #{USERS_UID}
+    </select>
+
+    <!-- call List.updateByUID -->
+    <update id="updateByUID" parameterType="Map">
+        UPDATE USERS_LIST
+        SET EMAIL = #{EMAIL},
+        PWD = #{PWD},
+        PHONE = #{PHONE}
+        WHERE USERS_UID = #{USERS_UID}
+    </update> 
+
+    <!-- call List.deleteUserByUid -->
+    <delete id="deleteUserByUid" parameterType="Map">
+        
+        DELETE FROM USERS_LIST
+        WHERE USERS_UID = #{USERS_UID}
+        
+    </delete>
+
 </mapper>

@@ -16,12 +16,6 @@ public class ListService {
     //     result = this.getList(dataMap);
     //     return result;
     // }
-
-    // public Object updateAndGetList(Object dataMap){
-    //     Object result =  this.updateOne(dataMap);
-    //         result = this.getList(dataMap);
-    //         return result;
-    // }
     
     public Object getList(Object dataMap){
         String sqlMapId = "List.selectFromUSERS_LIST";
@@ -29,19 +23,31 @@ public class ListService {
         return result;
     }
 
-    // public Object getOne(Object dataMap){
-    //     String sqlMapId = "CommonCodeOur.selectByUID";
+    public Object getOne(Object dataMap){
+        String sqlMapId = "List.selectFromUSERS_LISTByUid";
 
-    //     Object result = listDao.getOne(sqlMapId, dataMap);
-    //     return result;
-    // }
+        Object result = listDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+    public Object update(Object dataMap) {
+        String sqlMapId = "List.updateByUID";
+        Object result = listDao.update(sqlMapId, dataMap);
+        return result;
+    }
 
-    // public Object updateOne(Object dataMap){
-    //     String sqlMapId = "CommonCodeOur.updateByUID";
+    public Object updateAndGetList(Object dataMap) {
+        Object result = this.update(dataMap);
+        result = this.getList(dataMap);
+        return result;
 
-    //     Object result = listDao.update(sqlMapId, dataMap);
-    //     return result;    
-    // }
+    }
+
+    public Object updateOne(Object dataMap){
+        String sqlMapId = "List.updateByUID";
+
+        Object result = listDao.update(sqlMapId, dataMap);
+        return result;    
+    }
 
     // public Object insertOne(Object dataMap){
     //     String sqlMapId = "CommonCodeOur.insertWithUID";
@@ -50,10 +56,9 @@ public class ListService {
     //     return result;    
     // }
 
-    // public Object delete(Object dataMap){
-    //     String sqlMapId = "CommonCodeOur.deleteByUID";
-
-    //     Object result = listDao.delete(sqlMapId, dataMap);
-    //     return result;    
-    // }
+    public Object delete(Object dataMap){
+        String sqlMapId = "List.deleteUserByUid";
+        Object result = listDao.delete(sqlMapId, dataMap);
+        return result;    
+    }
 }
