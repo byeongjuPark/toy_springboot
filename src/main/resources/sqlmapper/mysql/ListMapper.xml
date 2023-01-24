@@ -6,7 +6,7 @@
     <select id="selectFromUSERS_LIST" 
         parameterType="Map" resultType="Map">
         SELECT *
-        FROM USERS_LIST;
+        FROM USERS_LIST
     </select>
 
     <!-- call List.selectFromUSERS_LISTByUid -->
